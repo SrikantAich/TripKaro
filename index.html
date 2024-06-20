@@ -3,27 +3,38 @@
 <head>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Tripkaro</title>
+  <link rel="favicon" href="favicon.png" type="image/x-icon">
+  <title>TripKaro</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<div class="hero-image">
-  <div class="hero-text">
-    <h1>Welcome to TripKaro</h1>
-    <p>Explore the world with fantastic places to venture around</p>
-    <div class="search">
-      <form action="#">
-    <input type="text" id="search-input" placeholder="Search for a city...">
-      </form>
+    <div class="navbar">
+        <a href="#" class="logo"><img src="./favicon.png" alt="logo"> TripKaro</a>
+        <a href="#">Reservations</a>
+        <a href="#">Home</a>
+      
     </div>
-  </div>
-</div>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>Welcome to TripKaro</h1>
+            <p>Explore the world with fantastic places to venture around</p>
+            <div class="search">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Search a City" name="search">
+                </form>
+            </div>
+        </div>
+    </div>
 
-<div id="card-container">
-  <!-- Cards will be dynamically added here -->
-</div>
+    <div id="card-container">
+        <!-- Cards will be dynamically added here -->
+    </div>
 
-<script src="script.js"></script>
+    <footer>
+        <p>© 2024 TripKaro. Summer PEP | Designed by Srikant Aich</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
