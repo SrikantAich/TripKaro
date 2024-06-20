@@ -1,76 +1,216 @@
-/* Ensure the entire height is used */
+/* Reset and base styles */
 body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .hero-image {
+    scroll-behavior: smooth;
+    background-color: #E5E4E2;
+}
+
+/* Hero section */
+.hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1599154456742-c82164d2dfb0?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-  }
-  
-  .hero-text {
+}
+
+.hero-text {
     text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -55%);
     color: white;
-  }
-  
-  .hero-text > p {
-    font-size: 24px;
-  }
-  
-  .hero-text > h1 {
-    font-size: 50px;
-  }
-  
-  .search {
-    display: flex;
+}
+
+.hero-text > p {
+    font-size: 23px;
+    font-weight: 200;
+    /* font-style: italic; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hero-text > h1 {
+    font-weight: 500;
+    font-size: 45px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Search bar */
+.search {
+    display: -webkit-inline-flex;
     align-items: center;
+    justify-content: center;
     margin-top: 20px;
-  }
-  
-  .search input[type="text"] {
+}
+
+.search input[type="text"] {
     padding: 10px;
     border: none;
-    font-size: 17px;
+    font-size: 16px;
+    font-style: italic;
     border-radius: 8px;
-    width: 800px;
-    height: 30px;
-  }
-  
-  #card-container {
+    width:900px;
+    height: 25px;
+    
+}
+
+/* Card container */
+#card-container {
     display: flex;
     flex-wrap: wrap;
+    padding: 50px;
     justify-content: center;
-    padding: 20px;
-  }
-  
-  .card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 48px;
+}
+
+/* Individual card styles */
+.card {
+    display: flex;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     margin: 10px;
-    padding: 20px;
-    width: 300px;
+    overflow: hidden;
+    width: 225px;
+    position: relative;
+    justify-content: space-around;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-image {
+    width: 237.5px;
+    height: 400px; 
+    object-fit: cover; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.card h2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    top: 300px;
+    font-weight: 500;
     text-align: center;
+    color: white;
+}
+
+.card p {
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    top: 340px;
+    color: white;
+}
+
+.card:hover {
+    transform: translateY(-15px); /* Lift card on hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.card:hover .card-image {
+    animation: scaleIn 0.3s forwards; /* Scale in on hover */
+    filter: brightness(50%); /* Dim the image on hover */
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.card .card-image {
+    animation: scaleOut 0.2s forwards; /* Scale out when not hovered */
+}
+
+@keyframes scaleOut {
+    from {
+        transform: scale();
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Navbar styling */
+.navbar {
+    /* overflow: -moz-hidden-unscrollable; */
+    background-color: gainsboro;
+    position:absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.navbar a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    gap: 20px;
+}
+
+.navbar a:hover {
+
+    color: black;
+    transform: translateY(-0.5px);
+}
+
+.navbar .logo {
+    float: left;
+    display: flex;
+    gap: 10px;
+    padding: 14px 16px;
+    font-size: 20px;
+}
+
+body {
+    padding-top: 20px; /* Adjust as needed based on your navbar height */
+}
+
+footer {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: gainsboro;
+    color: black;
+    height: 30px;
+    position: relative;
+    width: 100%;
+    bottom: -10;
+}
+
+.no-items-message
+
+{
+    font-size: x-large;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: gray;
+}
+
+.logo>img{
+    display: inline;
+    width: 20px;
+    height: 25px;
+}
+@media screen and (max-width: 850px) {
+    .search input[type="text"] {
+        font-size: 16px;  
+        width:450px;
+        height: 25px;
+    }
+    .hero-image {
+        height: 55%;
+    }     
   }
-  
-  .card h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .card p {
-    font-size: 18px;
-    margin: 5px 0;
-  }
-  
+
