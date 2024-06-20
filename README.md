@@ -49,7 +49,7 @@ You need to have Node.js and npm installed on your local machine.
 
 ## Usage
 
-- **Search for a City:** Type the name of a city in the search bar and press Enter. The list of cities will be filtered based on your input.
+- **Search for a City:** Type the name of a city in the search bar. The list of cities will be filtered based on your input.
 - **Clear Search:** Clear the search input to view all cities again.
 
 ## Contributing
